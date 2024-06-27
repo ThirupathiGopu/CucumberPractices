@@ -2,6 +2,7 @@ package stepDefination;
 
 import java.util.List;
 
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
@@ -65,15 +66,21 @@ public class Steps
 //	}
 	
 	@When("Enter user name {string}")
-	public void enter_user_name(String username) {
+	public void enter_user_name(String username) throws Exception {
+		List<String>info=PropertyReader.getData("loginspage", 1);
+		String usernam=info.get(0);
+		login.EnterUsername(usernam);
+		System.out.println("enter user name ");
+
+		
 	   
 	  
 	}
 
 	@When("Enter Password {string}")
-	public void enter_password(String password) {
-	   
-	    
+	public void enter_password(String password) throws Exception {
+		login.Enterpassword(password);
+		
 	}
 
 	

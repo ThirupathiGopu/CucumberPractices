@@ -10,8 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions
         (
         	features=".//Features//Login.feature",
-        	glue={"stepDefination","Utilities"},
-        	//glue="stepDefination",
+        	//glue={"stepDefination","Utilities"},
+        	glue="stepDefination",
         	dryRun=false,
         	monochrome = true,
         	plugin= {"pretty",

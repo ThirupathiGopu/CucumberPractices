@@ -49,9 +49,6 @@ public void EnterUsername(String username) throws InterruptedException, Exceptio
 	passwordl.click();
     Thread.sleep(2000);
 	usernamel.sendKeys(username);
-    
-
-
 }
 
 public void Enterpassword(String password) throws InterruptedException
@@ -61,7 +58,7 @@ public void Enterpassword(String password) throws InterruptedException
 	passwordl.click();
     Thread.sleep(2000);
 	passwordl.sendKeys(password);
-    throw new io.cucumber.java.PendingException();
+    
 
 }
 public void ClickOnLoginbtn()
