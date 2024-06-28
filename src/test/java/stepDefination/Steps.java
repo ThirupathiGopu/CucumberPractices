@@ -1,11 +1,8 @@
 package stepDefination;
 
 import java.util.List;
-
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
 import Utilities.Browser;
 import Utilities.PropertyReader;
 import io.cucumber.java.en.Given;
@@ -21,13 +18,11 @@ public class Steps
 	@Given("Lanch chrome browser")
 	public void lanch_chrome_browser() throws Exception 
 	{
-		
 		List<String> info = PropertyReader.getData("browser", 1);
 		String browsername = info.get(0), drivername = info.get(1);
 		Browser.LanchBrowser(browsername, drivername);
 		login = new Loginpage(driver);
 		System.out.println("browser will open ");
-		
 	}
 
 	@When("open url{string}")
@@ -36,12 +31,17 @@ public class Steps
 		List<String> info = PropertyReader.getData("browser", 1);
 		String ur=info.get(2);
 		Browser.openUrl(ur);
-
 		Thread.sleep(3000);
 		System.out.println("navigate to login page ");
-
-
 	}
+	
+	@When("isdplayed text {string}")
+	public void isdplayed_text(String text)
+	{
+		login.isdisplaytext();
+		
+	}
+
 
 //	@When("Enter user name{string} ")
 //	//@When("Enter user name  and Password ")

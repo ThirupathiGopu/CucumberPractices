@@ -1,4 +1,5 @@
 package pageObjects;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
@@ -16,10 +17,14 @@ public class Loginpage
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath="//h1[text()='Admin area demo']")
+	@CacheLookup
+	WebElement isdisplaytext;
 @FindBy(xpath="//input[@id='Email']")
 //@FindBy(css="#Email")
 @CacheLookup
 WebElement usernamel;
+
 
 @FindBy(xpath="//input[@id='Password']")
 @CacheLookup
@@ -41,6 +46,20 @@ public void Launchbrowser()
 //{
 //	driver.get(url);
 //}
+
+public void isdisplaytext()
+{
+	if(isdisplaytext.isDisplayed())
+	{
+		String inf=isdisplaytext.getText();
+		System.out.println(inf);
+		Assert.assertEquals(inf, "Admin area demo","test case is pass");
+	}
+	else
+	{
+		System.out.println("not matched or not find webelement");
+	}
+}
 
 public void EnterUsername(String username) throws InterruptedException, Exception
 {
