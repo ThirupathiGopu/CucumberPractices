@@ -47,7 +47,7 @@ public void Launchbrowser()
 //	driver.get(url);
 //}
 
-public void isdisplaytext()
+public void isdisplaytextmsg()
 {
 	if(isdisplaytext.isDisplayed())
 	{

@@ -38,7 +38,7 @@ public class Steps
 	@When("isdplayed text {string}")
 	public void isdplayed_text(String text)
 	{
-		login.isdisplaytext();
+		login.isdisplaytextmsg();
 		
 	}
 
